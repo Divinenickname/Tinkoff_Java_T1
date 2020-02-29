@@ -12,8 +12,11 @@ public class ElectricEngine implements IIncreasePower, IDecreasePower, IEngine {
      *
      * @param maxPower max power of engine
      */
-    public ElectricEngine(int maxPower, Accumulator accumulator){
+    public ElectricEngine(int maxPower){
         this.maxPower = maxPower;
+    }
+
+    public void setAccumulator(Accumulator accumulator){
         this.accumulator = accumulator;
     }
 
@@ -48,7 +51,7 @@ public class ElectricEngine implements IIncreasePower, IDecreasePower, IEngine {
 
     @Override
     public void startEngine() {
-        if(!isEnabled && accumulator.getCurrentCapacity()>0){
+        if(isEnabled || accumulator.getCurrentCapacity()==0){
             System.out.println("Nothing happens");
         } else{
             System.out.println("Engine has been started");

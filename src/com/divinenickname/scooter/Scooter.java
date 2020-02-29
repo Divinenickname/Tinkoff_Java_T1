@@ -79,10 +79,7 @@ public abstract class Scooter implements Gas, Brake {
 
     abstract public String getStatus();
 
-    public void start(){
-        engine.startEngine();
-        System.out.println("Scooter powered on");
-    }
+    abstract public void start();
 
     public void stop(){
         engine.stopEngine();

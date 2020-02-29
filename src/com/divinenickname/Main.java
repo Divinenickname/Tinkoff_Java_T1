@@ -1,6 +1,8 @@
 package com.divinenickname;
 
+import com.divinenickname.engines.ElectricEngine;
 import com.divinenickname.engines.PetrolEngine;
+import com.divinenickname.powerElements.Accumulator;
 import com.divinenickname.powerElements.LiPolAccumulator;
 import com.divinenickname.powerElements.Tank;
 import com.divinenickname.scooter.ElectricScooter;
@@ -11,18 +13,19 @@ import com.divinenickname.wheels.Wheel;
 public class Main {
 
     public static void main(String[] args) {
+        Tank defTank = new Tank(100, 55);
+        ElectricEngine engine = new ElectricEngine(150);
+        PetrolEngine petrolEngine = new PetrolEngine(defTank);
+        Accumulator accumulator = new LiPolAccumulator(10000, 2, 24, 5, 2000);
+
+
         Wheel pirelli = new Wheel(3, "Pirelli", true, "StreetDestroyer", 40, 20);
-        /*Scooter scooter = new ElectricScooter("Xiaomi", "Black", 2,
-                new LiPolAccumulator(18000, 5, 12, 3, 2500), pirelli);
+        Scooter elScooter = new ElectricScooter("Xiaomi", "Black", 2, accumulator, pirelli, engine);
 
-        ((ElectricScooter) scooter).charge();
-        System.out.println(scooter.getStatus());
+        elScooter.start();
+        System.out.println(elScooter.getStatus());
 
-        System.out.println(System.nanoTime());
-        System.out.println(System.nanoTime());*/
-
-        Scooter petrol = new PetrolScooter("Xiaomi", "black", 2, pirelli,
-                new PetrolEngine();
+        Scooter petrol = new PetrolScooter("Xiaomi", "black", 2, pirelli, petrolEngine, defTank);
 
     }
 }

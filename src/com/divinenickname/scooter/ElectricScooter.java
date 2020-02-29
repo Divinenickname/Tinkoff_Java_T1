@@ -1,5 +1,6 @@
 package com.divinenickname.scooter;
 
+import com.divinenickname.engines.ElectricEngine;
 import com.divinenickname.powerElements.Accumulator;
 import com.divinenickname.wheels.Wheel;
 
@@ -11,10 +12,14 @@ public class ElectricScooter extends Scooter {
      * power element
      */
     private Accumulator accumulator;
+    private ElectricEngine engine;
 
-    public ElectricScooter(String model, String color, int numOfWheels, Accumulator accumulator, Wheel wheel) {
+    public ElectricScooter(String model, String color, int numOfWheels,
+                           Accumulator accumulator, Wheel wheel, ElectricEngine engine) {
         super(model, color, numOfWheels, wheel);
         this.accumulator = accumulator;
+        this.engine = engine;
+        this.engine.setAccumulator(accumulator);
     }
 
     @Override
@@ -30,6 +35,11 @@ public class ElectricScooter extends Scooter {
         }
         return message;
 
+    }
+
+    @Override
+    public void start() {
+        engine.startEngine();
     }
 
     public void charge(){
