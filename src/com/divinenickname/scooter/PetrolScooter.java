@@ -6,7 +6,7 @@ import com.divinenickname.powerElements.Tank;
 import com.divinenickname.wheels.Wheel;
 
 public class PetrolScooter extends Scooter {
-    private PetrolEngine engine;
+    //private PetrolEngine engine;
     private Tank tank;
 
     @Override
@@ -14,15 +14,9 @@ public class PetrolScooter extends Scooter {
         return "Fuel: " + tank.getCurrentCapacity();
     }
 
-    @Override
-    public void start() {
-
-    }
-
     public PetrolScooter(String model, String color, int numOfWheels, Wheel wheel, PetrolEngine engine, Tank tank) {
-        super(model, color, numOfWheels, wheel);
+        super(model, color, numOfWheels, engine, wheel);
         this.tank = tank;
-        engine = new PetrolEngine(tank);
     }
 
 }

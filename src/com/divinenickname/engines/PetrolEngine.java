@@ -16,8 +16,10 @@ public class PetrolEngine implements IEngine, IIncreasePower{
         this.tank = tank;
     }
 
+
+
     @Override
-    public void startEngine() {
+    public void startEngine() {/*
         Runnable runnable = () -> {
             if(tank.getCurrentCapacity()>0){
                 isEnabled = true;
@@ -33,7 +35,14 @@ public class PetrolEngine implements IEngine, IIncreasePower{
             }
 
             stopEngine();
-        };
+        };*/
+
+        if(isEnabled || tank.getCurrentCapacity()==0){
+            System.out.println("Nothing happens");
+        } else{
+            System.out.println("Engine has been started");
+            isEnabled = true;
+        }
     }
 
     @Override
