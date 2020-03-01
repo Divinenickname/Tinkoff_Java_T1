@@ -28,6 +28,7 @@ public class Main {
         Scooter petrol = new PetrolScooter("Xiaomi", "black", 2, pirelli, petrolEngine, defTank);
         petrol.start();
         System.out.println(petrol.getStatus());
+        System.out.println("test");
 
     }
 }
