@@ -20,7 +20,7 @@ public class Main {
 
 
         Wheel pirelli = new Wheel(3, "Pirelli", true, "StreetDestroyer", 40, 20);
-        Scooter elScooter = new ElectricScooter("Xiaomi", "Black", 2, accumulator, pirelli, engine);
+        Scooter elScooter = new ElectricScooter("Xiaomi", "Black", 2, engine, accumulator, pirelli);
 
         elScooter.start();
         System.out.println(elScooter.getStatus());
