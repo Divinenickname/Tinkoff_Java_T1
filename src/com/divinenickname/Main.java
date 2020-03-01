@@ -26,6 +26,7 @@ public class Main {
         System.out.println(elScooter.getStatus());
 
         Scooter petrol = new PetrolScooter("Xiaomi", "black", 2, pirelli, petrolEngine, defTank);
+        petrol.start();
 
     }
 }

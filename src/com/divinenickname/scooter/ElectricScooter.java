@@ -19,17 +19,6 @@ public class ElectricScooter extends Scooter {
         this.accumulator = accumulator;
         engine.setAccumulator(this.accumulator);
     }
-    //private ElectricEngine engine;
-
-    /*public ElectricScooter(String model, String color, int numOfWheels,
-                           Accumulator accumulator, Wheel wheel, ElectricEngine engine) {
-        super(model, color, numOfWheels, wheel);
-        this.accumulator = accumulator;
-        super.engine = engine;
-        this.engine.setAccumulator(accumulator);
-    }*/
-
-
 
     @Override
     public String getStatus() {
@@ -45,11 +34,6 @@ public class ElectricScooter extends Scooter {
         return message;
 
     }
-
-    /*@Override
-    public void start() {
-        engine.startEngine();
-    }*/
 
     public void charge(){
         accumulator.startCharging();
