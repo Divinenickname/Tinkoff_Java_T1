@@ -19,24 +19,7 @@ public class PetrolEngine implements IEngine, IIncreasePower{
 
 
     @Override
-    public void startEngine() {/*
-        Runnable runnable = () -> {
-            if(tank.getCurrentCapacity()>0){
-                isEnabled = true;
-            }
-
-            while (tank.getCurrentCapacity()>0){
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                tank.setCurrentCapacity(tank.getCurrentCapacity() - BASE_FUEL_CONSUMPTION);
-            }
-
-            stopEngine();
-        };*/
-
+    public void startEngine() {
         if(isEnabled || tank.getCurrentCapacity()==0){
             System.out.println("Nothing happens");
         } else{
