@@ -10,6 +10,9 @@ import com.divinenickname.scooter.PetrolScooter;
 import com.divinenickname.scooter.Scooter;
 import com.divinenickname.wheels.Wheel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,6 +27,9 @@ public class Main {
 
         elScooter.start();
         System.out.println(elScooter.getStatus());
+
+        List<String> list = new ArrayList<>();
+
 
         Scooter petrol = new PetrolScooter("Xiaomi", "black", 2, pirelli, petrolEngine, defTank);
         petrol.start();

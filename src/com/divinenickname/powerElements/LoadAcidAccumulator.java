@@ -11,7 +11,6 @@ public class LoadAcidAccumulator extends Accumulator {
         super(maxCapacity, weight, voltage, lifeTime, defaultCapacity);
     }
 
-    @Override
     public void startCharging() {
         while(getCurrentCapacity() < getMaxCapacity() - getMaxCapacity()*0.02){
             if(getCurrentCapacity()<getMaxCapacity()*0.3){

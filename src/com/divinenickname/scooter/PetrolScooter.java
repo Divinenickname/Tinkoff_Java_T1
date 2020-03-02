@@ -6,7 +6,6 @@ import com.divinenickname.powerElements.Tank;
 import com.divinenickname.wheels.Wheel;
 
 public class PetrolScooter extends Scooter {
-    //private PetrolEngine engine;
     private Tank tank;
 
     @Override

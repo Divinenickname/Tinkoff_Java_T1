@@ -2,11 +2,10 @@ package com.divinenickname.engines;
 
 import com.divinenickname.powerElements.Accumulator;
 
-public class ElectricEngine implements IIncreasePower, IDecreasePower, IEngine {
+public class ElectricEngine extends Engine implements IIncreasePower, IDecreasePower, IEngine {
     private int power;
     private int maxPower;
     private Accumulator accumulator;
-    private boolean isEnabled;
 
     /**
      *
@@ -51,21 +50,21 @@ public class ElectricEngine implements IIncreasePower, IDecreasePower, IEngine {
 
     @Override
     public void startEngine() {
-        if(isEnabled || accumulator.getCurrentCapacity()==0){
+        if(super.isEnabled() || accumulator.getCurrentCapacity()==0){
             System.out.println("Nothing happens");
         } else{
             System.out.println("Engine has been started");
-            isEnabled = true;
+            super.setEnabled(true);
         }
     }
 
     @Override
     public void stopEngine() {
-        if(!isEnabled){
+        if(!super.isEnabled()){
             System.out.println("Nothing happens");
         } else{
             System.out.println("Engine has been stopped");
-            isEnabled = false;
+            super.setEnabled(false);
         }
     }
 }

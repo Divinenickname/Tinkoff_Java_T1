@@ -1,9 +1,9 @@
 package com.divinenickname.scooter;
 
-import com.divinenickname.engines.ElectricEngine;
 import com.divinenickname.interfaces.Brake;
 import com.divinenickname.engines.IEngine;
 import com.divinenickname.interfaces.Gas;
+import com.divinenickname.speedometers.Speedometer;
 import com.divinenickname.wheels.Wheel;
 
 public abstract class Scooter implements Gas, Brake {
@@ -25,6 +25,8 @@ public abstract class Scooter implements Gas, Brake {
      */
     private IEngine engine;
 
+    private Speedometer speedometer;
+
     private Wheel wheel;
     /**
      * It used default electric motor
@@ -38,9 +40,10 @@ public abstract class Scooter implements Gas, Brake {
         this.wheel = wheel;
     }
 
-    Scooter(String model, String color, int numOfWheels, IEngine engine, Wheel wheel){
+    Scooter(String model, String color, int numOfWheels, IEngine engine, Wheel wheel, Speedometer speedometer){
         this(model, color, numOfWheels, wheel);
         this.engine = engine;
+        this.speedometer = speedometer;
     }
 
     @Override
@@ -82,5 +85,9 @@ public abstract class Scooter implements Gas, Brake {
     public void stop(){
         engine.stopEngine();
         System.out.println("Scooter powered off");
+    }
+
+    public String getCurrentSpeed(){
+        return String.valueOf(speedometer.getCurrentSpeed());
     }
 }
