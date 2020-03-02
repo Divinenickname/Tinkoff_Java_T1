@@ -11,7 +11,6 @@ public class LiPolAccumulator extends Accumulator {
         super(capacity, weight, voltage, lifeTime, defaultCapacity);
     }
 
-    @Override
     public void startCharging() {
 
         while(getCurrentCapacity() < getMaxCapacity() - getMaxCapacity()*0.05){

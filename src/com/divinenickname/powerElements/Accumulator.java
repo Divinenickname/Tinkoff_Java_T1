@@ -39,6 +39,9 @@ public abstract class Accumulator implements ICharge{
         this.currentCapacity = defaultCapacity;
     }
 
+    @Override
+    public abstract void startCharging();
+
     public int getCurrentCapacity() {
         return currentCapacity;
     }
