@@ -25,7 +25,7 @@ public class Main {
         Speedometer speedometer = new AmericanSpeedometer();
 
 
-        Wheel pirelli = new Wheel(3, "Pirelli", true, "StreetDestroyer", 40, 20);
+        Wheel pirelli = new Wheel(3, "Pirelli", true, "StreetDestroyer", 40, 20, 8, 7);
         Scooter elScooter = new ElectricScooter("Xiaomi", "Black", 2, electricEngine, accumulator, pirelli, speedometer);
 
         elScooter.start();
