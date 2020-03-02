@@ -3,6 +3,7 @@ package com.divinenickname.scooter;
 import com.divinenickname.engines.ElectricEngine;
 import com.divinenickname.engines.IEngine;
 import com.divinenickname.powerElements.Accumulator;
+import com.divinenickname.speedometers.Speedometer;
 import com.divinenickname.wheels.Wheel;
 
 /**
@@ -14,8 +15,8 @@ public class ElectricScooter extends Scooter {
      */
     private Accumulator accumulator;
 
-    public ElectricScooter(String model, String color, int numOfWheels, ElectricEngine engine, Accumulator accumulator, Wheel wheel) {
-        super(model, color, numOfWheels, engine, wheel);
+    public ElectricScooter(String model, String color, int numOfWheels, ElectricEngine engine, Accumulator accumulator, Wheel wheel, Speedometer speedometer) {
+        super(model, color, numOfWheels, engine, wheel, speedometer);
         this.accumulator = accumulator;
         engine.setAccumulator(this.accumulator);
     }
