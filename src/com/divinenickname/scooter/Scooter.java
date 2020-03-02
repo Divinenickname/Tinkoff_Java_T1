@@ -57,10 +57,6 @@ public abstract class Scooter implements Gas, Brake {
         return numOfWheels;
     }
 
-    public void setNumOfWheels(int numOfWheels) {
-        this.numOfWheels = numOfWheels;
-    }
-
     public String getModel() {
         return model;
     }
