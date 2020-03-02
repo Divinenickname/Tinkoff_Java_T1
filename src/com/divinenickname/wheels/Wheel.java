@@ -30,14 +30,19 @@ public class Wheel {
      * Tread width, millimeters
      */
     private int width;
+    private Bolt[] bolts;
 
-    public Wheel(int size, String brand, boolean isTubeless, String model, int height, int width) {
+    public Wheel(int size, String brand, boolean isTubeless, String model, int height, int width, int boltCount, int boltSize) {
         this.size = size;
         this.brand = brand;
         this.isTubeless = isTubeless;
         this.model = model;
         this.height = height;
         this.width = width;
+        bolts = new Bolt[boltCount];
+        for (int i = 0; i < boltCount; i++) {
+            bolts[i] = new Bolt(boltSize);
+        }
     }
 
     public int getSize() {
@@ -62,5 +67,12 @@ public class Wheel {
 
     public int getWidth() {
         return width;
+    }
+
+    class Bolt{
+        private int size;
+        Bolt(int size) {
+            this.size = size;
+        }
     }
 }

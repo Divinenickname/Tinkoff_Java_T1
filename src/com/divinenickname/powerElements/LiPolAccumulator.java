@@ -26,6 +26,7 @@ public class LiPolAccumulator extends Accumulator {
         }
 
         System.out.println("Charged!");
-
     }
+
+
 }
